@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Pedidos - Delivery SUS</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-heartbeat"></i>
+            <h2>Delivery SUS</h2>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Início</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-pills"></i>
+                <span>Solicitar Medicamento</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-box"></i>
+                <span>Meus Pedidos</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-truck"></i>
+                <span>Rastreamento</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-history"></i>
+                <span>Histórico</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-user"></i>
+                <span>Meu Perfil</span>
+            </a>
+            <a href="../index.html" class="nav-item">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Sair</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Bar -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1>Meus Pedidos</h1>
+            </div>
+            <div class="topbar-right">
+                <div class="notification">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+                <div class="user-info">
+                    <span>Olá, <strong>João Silva</strong></span>
+                    <img src="https://via.placeholder.com/40" alt="User">
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #4CAF50;">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>12</h3>
+                        <p>Entregas Concluídas</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #2196F3;">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>2</h3>
+                        <p>Em Entrega</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #FF9800;">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>1</h3>
+                        <p>Aguardando</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #9C27B0;">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>15</h3>
+                        <p>Total de Pedidos</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solicitar Medicamento -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>Solicitar Novo Medicamento</h2>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        Nova Solicitação
+                    </button>
+                </div>
+                <div class="card-body">
+                    <form id="formSolicitacao">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="medicamento">Medicamento</label>
+                                <select id="medicamento" required>
+                                    <option value="">Selecione o medicamento</option>
+                                    <option value="1">Losartana 50mg</option>
+                                    <option value="2">Metformina 850mg</option>
+                                    <option value="3">Sinvastatina 20mg</option>
+                                    <option value="4">Omeprazol 20mg</option>
+                                    <option value="5">Captopril 25mg</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="quantidade">Quantidade</label>
+                                <input type="number" id="quantidade" min="1" max="10" value="1" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ubs">UBS</label>
+                                <select id="ubs" required>
+                                    <option value="">Selecione a UBS</option>
+                                    <option value="1">UBS Pioneiras</option>
+                                    <option value="2">UBS Botafogo</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="observacoes">Observações (opcional)</label>
+                            <textarea id="observacoes" rows="3"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Solicitação
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Pedidos Recentes -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>Pedidos Recentes</h2>
+                    <a href="#" class="link">Ver todos</a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Pedido</th>
+                                    <th>Medicamento</th>
+                                    <th>Data</th>
+                                    <th>Status</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#001523</td>
+                                    <td>Losartana 50mg</td>
+                                    <td>22/01/2026</td>
+                                    <td><span class="badge-status success">Entregue</span></td>
+                                    <td>
+                                        <button class="btn-icon" title="Ver detalhes">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#001522</td>
+                                    <td>Metformina 850mg</td>
+                                    <td>20/01/2026</td>
+                                    <td><span class="badge-status warning">Em Entrega</span></td>
+                                    <td>
+                                        <button class="btn-icon" title="Rastrear">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#001521</td>
+                                    <td>Sinvastatina 20mg</td>
+                                    <td>18/01/2026</td>
+                                    <td><span class="badge-status info">Aguardando</span></td>
+                                    <td>
+                                        <button class="btn-icon" title="Ver detalhes">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../scripts/dashboard.js"></script>
+</body>
+</html>
